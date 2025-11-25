@@ -44,9 +44,6 @@ export default function AdminDashboard() {
     // Fetch dashboard stats
     fetch(`${API_PY}/api/dashboard/stats`)
       .then((res) => res.json())
-      git status
-      git add .
-      
       .then((data) =>
         setStats((prev) => ({
           ...prev,
