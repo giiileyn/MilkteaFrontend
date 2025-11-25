@@ -66,7 +66,7 @@ export default function AdminDashboard() {
       .catch((err) => console.error("Error fetching low stock:", err));
 
     // Fetch categories
-    fetch(`${API_PY}/api/categories`)
+    fetch(`${API_PY}/categories`)
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error("Error fetching categories:", err));
