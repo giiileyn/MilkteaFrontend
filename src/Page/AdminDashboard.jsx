@@ -56,7 +56,7 @@ export default function AdminDashboard() {
       .catch((err) => console.error("Error fetching stats:", err));
 
     // Fetch low stock products
-    fetch(`${API_PY}/api/stock/`)
+    fetch(`https://milkteabackend-py.onrender.com/api/stock/`)
       .then((res) => res.json())
       .then((data) => {
         // Filter low stock ≤ 5
@@ -66,19 +66,19 @@ export default function AdminDashboard() {
       .catch((err) => console.error("Error fetching low stock:", err));
 
     // Fetch categories
-    fetch(`${API_PY}/api/categories`)
+    fetch(`https://milkteabackend-py.onrender.com/api/categories`)
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error("Error fetching categories:", err));
 
     // Fetch toppings
-    fetch(`${API_PY}/api/toppings/`)
+    fetch(`https://milkteabackend-py.onrender.com/api/toppings/`)
       .then((res) => res.json())
       .then((data) => setToppings(data))
       .catch((err) => console.error("Error fetching toppings:", err));
 
     // Fetch orders and process recentOrders + topProducts
-    fetch(`${API_NODE}/orders`)
+    fetch(`https://milkteabackend-py.onrender.com/orders`)
       .then((res) => res.json())
       .then((orders) => {
         const recentOrders = orders.map((o) => ({
@@ -146,7 +146,7 @@ export default function AdminDashboard() {
 
    // Refresh functions for modals
   const refreshProducts = () => {
-    fetch(`${API_PY}/api/stock/`)
+    fetch(`https://milkteabackend-py.onrender.com/api/stock/`)
       .then((res) => res.json())
       .then((data) => {
         const low = data.filter((p) => p.stock <= 5);
@@ -155,13 +155,13 @@ export default function AdminDashboard() {
   };
 
   const refreshCategories = () => {
-    fetch(`${API_PY}/api/categories`)
+    fetch(`https://milkteabackend-py.onrender.com/api/categories`)
       .then((res) => res.json())
       .then((data) => setCategories(data));
   };
 
   const refreshToppings = () => {
-    fetch(`${API_PY}/api/toppings/`)
+    fetch(`https://milkteabackend-py.onrender.com/api/toppings/`)
       .then((res) => res.json())
       .then((data) => setToppings(data));
   };
