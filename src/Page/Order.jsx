@@ -15,7 +15,7 @@ const handleEdit = (orderId) => {
 
 const handleStatusUpdate = async (order, newStatus) => {
   try {
-    await axios.patch(`http://localhost:4000/orders/${order._id}/status`, {
+    await axios.patch(`https://milkteabackend-js.onrender.com/count/categories/count/orders/${order._id}/status`, {
       status: newStatus,
     });
 
@@ -39,7 +39,7 @@ const handleStatusUpdate = async (order, newStatus) => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/orders");
+        const res = await axios.get("https://milkteabackend-js.onrender.com/orders");
         const data = res.data.map((o, index) => ({
           _id: o._id, // keep backend ID for updates
           id: index + 1, // for display only

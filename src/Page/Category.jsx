@@ -11,7 +11,7 @@ const Category = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/count/categories/count");
+      const response = await axios.get("https://milkteabackend-py.onrender.com/api/count/categories/count");
       const categoriesData = Array.isArray(response.data)
         ? response.data
         : response.data.data || [];

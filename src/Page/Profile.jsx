@@ -59,7 +59,7 @@ const handleProfileUpdate = async (e) => {
     if (avatarFile) formData.append("avatar", avatarFile);
 
     const res = await axios.patch(
-      `http://localhost:5000/users/${user.id}`,
+      `https://milkteabackend-py.onrender.com/api/users/${user.id}`,
       formData,
       { headers: { "Content-Type": "multipart/form-data" } } // <-- important
     );
@@ -95,7 +95,7 @@ const handlePasswordUpdate = async (e) => {
     };
 
     const res = await axios.patch(
-      `http://localhost:4000/password/${user.id}`,
+      `https://milkteabackend-js.onrender.com/password/${user.id}`,
       payload,
       { headers: { "Content-Type": "application/json" } }
     );
