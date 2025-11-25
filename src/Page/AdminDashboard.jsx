@@ -36,9 +36,13 @@ export default function AdminDashboard() {
   const [showAddCategoryModal, setShowAddCategoryModal] = useState(false);
   const [showAddToppingModal, setShowAddToppingModal] = useState(false);
 
+
+  const API_NODE = import.meta.env.VITE_API_URL_NODE;
+  const API_PY = import.meta.env.VITE_API_URL_PY;
+
   useEffect(() => {
     // Fetch dashboard stats
-    fetch("http://127.0.0.1:5000/api/dashboard/stats")
+    fetch(`${API_PY}/api/dashboard/stats`)
       .then((res) => res.json())
       .then((data) =>
         setStats((prev) => ({
@@ -52,7 +56,7 @@ export default function AdminDashboard() {
       .catch((err) => console.error("Error fetching stats:", err));
 
     // Fetch low stock products
-    fetch("http://127.0.0.1:5000/stock/")
+    fetch(`${API_PY}/stock/`)
       .then((res) => res.json())
       .then((data) => {
         // Filter low stock ≤ 5
@@ -62,19 +66,19 @@ export default function AdminDashboard() {
       .catch((err) => console.error("Error fetching low stock:", err));
 
     // Fetch categories
-    fetch("http://127.0.0.1:5000/api/categories")
+    fetch(`${API_PY}/api/categories`)
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error("Error fetching categories:", err));
 
     // Fetch toppings
-    fetch("http://127.0.0.1:5000/toppings/")
+    fetch(`${API_PY}/toppings/`)
       .then((res) => res.json())
       .then((data) => setToppings(data))
       .catch((err) => console.error("Error fetching toppings:", err));
 
     // Fetch orders and process recentOrders + topProducts
-    fetch("http://localhost:4000/orders")
+    fetch(`${API_NODE}/orders`)
       .then((res) => res.json())
       .then((orders) => {
         const recentOrders = orders.map((o) => ({
@@ -142,7 +146,7 @@ export default function AdminDashboard() {
 
    // Refresh functions for modals
   const refreshProducts = () => {
-    fetch("http://127.0.0.1:5000/stock/")
+    fetch(`${API_PY}/stock/`)
       .then((res) => res.json())
       .then((data) => {
         const low = data.filter((p) => p.stock <= 5);
@@ -151,13 +155,13 @@ export default function AdminDashboard() {
   };
 
   const refreshCategories = () => {
-    fetch("http://127.0.0.1:5000/api/categories")
+    fetch(`${API_PY}/api/categories`)
       .then((res) => res.json())
       .then((data) => setCategories(data));
   };
 
   const refreshToppings = () => {
-    fetch("http://127.0.0.1:5000/toppings/")
+    fetch(`${API_PY}/toppings/`)
       .then((res) => res.json())
       .then((data) => setToppings(data));
   };
