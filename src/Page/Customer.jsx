@@ -31,7 +31,7 @@ const Customer = () => {
   if (!window.confirm("Are you sure you want to delete this user?")) return;
 
   try {
-    const res = await axios.delete(`http://127.0.0.1:5000/users/${id}`);
+    const res = await axios.delete(`https://milkteabackend-py.onrender.com/api/users/${id}`);
     if (res.data.success) {
       
       setCustomers(customers.filter((c) => c.id !== id));
