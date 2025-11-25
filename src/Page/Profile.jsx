@@ -126,7 +126,7 @@ const handlePasswordUpdate = async (e) => {
             src={avatarFile 
                   ? URL.createObjectURL(avatarFile) 
                   : (user.avatar 
-                      ? `http://localhost:5000${user.avatar}` 
+                      ? `https://milkteabackend-py.onrender.com/api/${user.avatar}` 
                       : "https://via.placeholder.com/100")} 
             alt="Profile" 
           />
