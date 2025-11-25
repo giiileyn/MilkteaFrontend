@@ -79,7 +79,11 @@ const Login = () => {
 
           <button type="submit" className="login-button">Login</button>
         </form>
+         <p className="register-link">
+          Don't have an account? <Link to="/register">Register here</Link>
+        </p>
       </div>
+      
 
       {/* CSS */}
       <style>{`
