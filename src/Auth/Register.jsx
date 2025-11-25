@@ -100,10 +100,10 @@ const Register = () => {
           </div>
           <button type="submit" className="register-button">Register</button>
         </form>
-      {/* ✅ Registration Link
+
         <p className="register-link">
           Don't have an account? <Link to="/register">Register here</Link>
-        </p> */}
+        </p>
       </div>
 
       {/* CSS */}
