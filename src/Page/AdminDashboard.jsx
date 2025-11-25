@@ -42,7 +42,7 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     // Fetch dashboard stats
-    fetch(`${API_PY}/api/dashboard/stats`)
+    fetch(`https://milkteabackend-py.onrender.com/api/dashboard/stats`)
       .then((res) => res.json())
       .then((data) =>
         setStats((prev) => ({
