@@ -20,7 +20,7 @@ const Register = () => {
     setSuccess("");
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL_NODE; // ✅ Use Render backend URL
+      const API_URL = import.meta.env.VITE_API_URL_NODE; 
 
       // Use FormData for file upload
       const formData = new FormData();
@@ -102,7 +102,7 @@ const Register = () => {
         </form>
 
         <p className="register-link">
-          Don't have an account? <Link to="/register">Register here</Link>
+          Already have an account? <Link to="/">Register here</Link>
         </p>
       </div>
 

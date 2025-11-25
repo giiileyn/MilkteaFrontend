@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -17,7 +16,8 @@ const Login = () => {
     setError("");
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL;
+      const API_URL = import.meta.env.VITE_API_URL_NODE;
+
 
       const response = await axios.post(`${API_URL}/auth/login`, {
         email,
@@ -26,6 +26,7 @@ const Login = () => {
 
 
       console.log("LOGIN RESPONSE:", response.data);
+      console.log("API URL:", API_URL);
 
       const { user, token } = response.data;
 
