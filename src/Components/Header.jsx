@@ -44,14 +44,11 @@ const Header = () => {
 
       <div className="header-right">
         {user && user.avatar ? (
-          <img 
-          src={avatarFile 
-                ? URL.createObjectURL(avatarFile) 
-                : (user.avatar 
-                    ? `https://milkteabackend-py.onrender.com${user.avatar}` 
-                    : "https://via.placeholder.com/100")} 
-          alt="Profile" 
-        />
+          <img
+            src={`http://localhost:5000${user.avatar}`}
+            alt="Avatar"
+            className="avatar"
+          />
         ) : (
           <div className="avatar-placeholder" />
         )}
