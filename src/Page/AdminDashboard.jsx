@@ -44,6 +44,9 @@ export default function AdminDashboard() {
     // Fetch dashboard stats
     fetch(`${API_PY}/api/dashboard/stats`)
       .then((res) => res.json())
+      git status
+      git add .
+      
       .then((data) =>
         setStats((prev) => ({
           ...prev,
@@ -56,7 +59,7 @@ export default function AdminDashboard() {
       .catch((err) => console.error("Error fetching stats:", err));
 
     // Fetch low stock products
-    fetch(`${API_PY}/stock/`)
+    fetch(`${API_PY}/api/stock/`)
       .then((res) => res.json())
       .then((data) => {
         // Filter low stock ≤ 5
@@ -66,13 +69,13 @@ export default function AdminDashboard() {
       .catch((err) => console.error("Error fetching low stock:", err));
 
     // Fetch categories
-    fetch(`${API_PY}/categories`)
+    fetch(`${API_PY}/api/categories`)
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error("Error fetching categories:", err));
 
     // Fetch toppings
-    fetch(`${API_PY}/toppings/`)
+    fetch(`${API_PY}/api/toppings/`)
       .then((res) => res.json())
       .then((data) => setToppings(data))
       .catch((err) => console.error("Error fetching toppings:", err));
@@ -146,7 +149,7 @@ export default function AdminDashboard() {
 
    // Refresh functions for modals
   const refreshProducts = () => {
-    fetch(`${API_PY}/stock/`)
+    fetch(`${API_PY}/api/stock/`)
       .then((res) => res.json())
       .then((data) => {
         const low = data.filter((p) => p.stock <= 5);
@@ -161,7 +164,7 @@ export default function AdminDashboard() {
   };
 
   const refreshToppings = () => {
-    fetch(`${API_PY}/toppings/`)
+    fetch(`${API_PY}/api/toppings/`)
       .then((res) => res.json())
       .then((data) => setToppings(data));
   };
