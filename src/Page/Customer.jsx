@@ -8,7 +8,7 @@ const Customer = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:5000/users/");
+        const response = await axios.get("https://milkteabackend-py.onrender.com/users/");
         console.log("API response:", response.data);
 
         const mappedCustomers = response.data.data.map((user) => ({
