@@ -78,7 +78,7 @@ export default function AdminDashboard() {
       .catch((err) => console.error("Error fetching toppings:", err));
 
     // Fetch orders and process recentOrders + topProducts
-    fetch(`https://milkteabackend-py.onrender.com/orders`)
+    fetch(`https://milkteabackend-js.onrender.com/orders`)
       .then((res) => res.json())
       .then((orders) => {
         const recentOrders = orders.map((o) => ({
