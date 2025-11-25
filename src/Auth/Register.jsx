@@ -20,7 +20,7 @@ const Register = () => {
     setSuccess("");
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL; // ✅ Use Render backend URL
+      const API_URL = import.meta.env.VITE_API_URL_NODE; // ✅ Use Render backend URL
 
       // Use FormData for file upload
       const formData = new FormData();
