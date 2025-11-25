@@ -123,13 +123,14 @@ const handlePasswordUpdate = async (e) => {
       <aside className="sidebar">
         <div className="profile-image">
           <img 
-            src={avatarFile 
-                  ? URL.createObjectURL(avatarFile) 
-                  : (user.avatar 
-                      ? `https://milkteabackend-py.onrender.com/api/${user.avatar}` 
-                      : "https://via.placeholder.com/100")} 
-            alt="Profile" 
-          />
+          src={avatarFile 
+                ? URL.createObjectURL(avatarFile) 
+                : (user.avatar 
+                    ? `https://milkteabackend-py.onrender.com${user.avatar}` 
+                    : "https://via.placeholder.com/100")} 
+          alt="Profile" 
+        />
+
 
         </div>
         <nav className="sidebar-nav">
