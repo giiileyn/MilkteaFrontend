@@ -85,7 +85,7 @@ export default function AddProductModal({ categories, onClose }) {
     };
 
     try {
-      const response = await fetch("http://localhost:4000/products", {
+      const response = await fetch("https://milkteabackend-js.onrender.com/products", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

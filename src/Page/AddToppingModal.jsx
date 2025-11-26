@@ -14,7 +14,7 @@ export default function AddToppingModal({ onClose, onToppingAdded }) {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:4000/add_toppings", {
+      const response = await fetch("https://milkteabackend-js.onrender.com/add_toppings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, price, stock, status }),

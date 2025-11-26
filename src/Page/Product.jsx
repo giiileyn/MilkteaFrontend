@@ -11,7 +11,7 @@ const Product = () => {
   // Fetch products
   const fetchProducts = async () => {
     try {
-      const res = await fetch("http://localhost:4000/products/");
+      const res = await fetch("https://milkteabackend-js.onrender.com/products/");
       const data = await res.json();
 
       const formatted = data.map((p) => ({

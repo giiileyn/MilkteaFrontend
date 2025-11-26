@@ -12,7 +12,7 @@ export default function AddCategoryModal({ onClose, onCategoryAdded }) {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:4000/categories", {
+      const response = await fetch("https://milkteabackend-js.onrender.com/categories", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: categoryName, description }),
